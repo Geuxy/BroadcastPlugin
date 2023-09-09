@@ -1,0 +1,16 @@
+
+# Broadcast Plugin by Geuxy
+# Cool prefix
+prefix: "&7[&bBroadcast&7]&r"
+
+# Message sent when running broadcast-reload
+# Placeholders: {prefix}.
+reload: "{prefix} &aReloaded configuration!"
+
+# Broadcast Message
+# Placeholders: {prefix}, {message}.
+# This value supports Placeholder API.
+message:
+  - "&8------------ {prefix} &8------------"
+  - "{message}"
+  - "&8------------ {prefix} &8------------"

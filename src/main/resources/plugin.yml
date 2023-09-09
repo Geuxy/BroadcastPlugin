@@ -1,0 +1,17 @@
+name: "Broadcast"
+description: "A simple plugin to send broadcasts"
+version: 1.0
+main: me.geuxy.Broadcast
+
+commands:
+  broadcast:
+    aliases: [ "bc" ]
+    description: "Sends a message to all players"
+    usage: "/broadcast <message>"
+    permission: broadcast.send
+
+  broadcast-reload:
+    aliases: [ "bc-reload" ]
+    description: "Reloads the plugin command"
+    usage: "/bc-reload"
+    permission: broadcast.reload

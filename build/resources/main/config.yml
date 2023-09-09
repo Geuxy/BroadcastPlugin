@@ -1,0 +1,10 @@
+
+# Broadcast Plugin by Geuxy
+
+prefix: "&7[&bBroadcast&7]&r"
+reload: "{prefix} &aReloaded configuration!"
+
+message:
+  - "&8------------ {prefix} &8------------"
+  - "{message}"
+  - "&8------------ {prefix} &8------------"
