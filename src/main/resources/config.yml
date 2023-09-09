@@ -7,6 +7,10 @@ prefix: "&7[&bBroadcast&7]&r"
 # Placeholders: {prefix}.
 reload: "{prefix} &aReloaded configuration!"
 
+# Message sent when console tries to run a command for players only
+# Placeholders: {prefix}.
+player-only: "&cOnly players can use this command!"
+
 # Broadcast Message
 # Placeholders: {prefix}, {message}.
 # This value supports Placeholder API.

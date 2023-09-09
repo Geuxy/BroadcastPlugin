@@ -10,7 +10,7 @@ import org.bukkit.command.CommandSender;
 public class ReloadCommand extends AbstractCommand {
 
     public ReloadCommand() {
-        super("broadcast-reload");
+        super("broadcast-reload", true);
     }
 
     @Override

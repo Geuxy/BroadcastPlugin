@@ -13,7 +13,9 @@ public enum Settings {
     MESSAGE("message"),
 
     // Message sent when plugin has been reloaded by command
-    RELOAD("reload");
+    RELOAD("reload"),
+
+    PLAYER_ONLY("player-only");
 
     private final String prefix;
 

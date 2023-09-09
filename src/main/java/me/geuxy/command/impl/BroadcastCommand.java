@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
 public class BroadcastCommand extends AbstractCommand {
 
     public BroadcastCommand() {
-        super("broadcast");
+        super("broadcast", false);
     }
 
     @Override
