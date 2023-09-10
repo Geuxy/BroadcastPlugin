@@ -10,26 +10,24 @@ public class Broadcast extends JavaPlugin {
 
     private static Broadcast instance;
 
-    private boolean papiCompatible;
+    private boolean papi;
 
     @Override
     public void onEnable() {
         instance = this;
 
-        // Check if server has PlaceholderAPI plugin
-        this.papiCompatible = Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null;
+        this.papi = Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null;
 
-        // Initialize commands
-        new BroadcastCommand();
-        new ReloadCommand();
+        Broadcast.getInstance().getCommand("broadcast").setExecutor(new BroadcastCommand());
+        Broadcast.getInstance().getCommand("broadcast-reload").setExecutor(new ReloadCommand());
     }
 
     public static Broadcast getInstance() {
         return instance;
     }
 
-    public boolean isPapiCompatible() {
-        return papiCompatible;
+    public boolean isPapi() {
+        return papi;
     }
 
 }

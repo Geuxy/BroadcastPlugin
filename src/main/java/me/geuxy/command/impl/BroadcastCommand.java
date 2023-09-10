@@ -1,18 +1,12 @@
 package me.geuxy.command.impl;
 
-import me.geuxy.command.AbstractCommand;
+import me.geuxy.command.ICommand;
+import me.geuxy.utils.MessageUtils;
 import me.geuxy.utils.Settings;
-import me.geuxy.utils.StringUtils;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
-public class BroadcastCommand extends AbstractCommand {
-
-    public BroadcastCommand() {
-        super("broadcast", false);
-    }
+public class BroadcastCommand implements ICommand {
 
     @Override
     public void handle(CommandSender sender, String[] args) {
@@ -27,9 +21,14 @@ public class BroadcastCommand extends AbstractCommand {
             i++;
         }
 
-        for(String line : Settings.MESSAGE.castStringList()) {
-            Bukkit.broadcastMessage(StringUtils.format((Player) sender, line, message));
+        for(String line : Settings.MESSAGE.stringListValue()) {
+            MessageUtils.sendBroadcast(sender, line, message);
         }
+    }
+
+    @Override
+    public boolean allowConsole() {
+        return false;
     }
 
 }

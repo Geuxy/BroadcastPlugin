@@ -1,22 +1,23 @@
 package me.geuxy.command.impl;
 
 import me.geuxy.Broadcast;
-import me.geuxy.command.AbstractCommand;
+import me.geuxy.command.ICommand;
+import me.geuxy.utils.MessageUtils;
 import me.geuxy.utils.Settings;
 
-import me.geuxy.utils.StringUtils;
 import org.bukkit.command.CommandSender;
 
-public class ReloadCommand extends AbstractCommand {
-
-    public ReloadCommand() {
-        super("broadcast-reload", true);
-    }
+public class ReloadCommand implements ICommand {
 
     @Override
     public void handle(CommandSender sender, String[] args) {
         Broadcast.getInstance().reloadConfig();
-        sender.sendMessage(StringUtils.format(Settings.RELOAD.castString()));
+        MessageUtils.sendMessage(sender, Settings.RELOAD.stringValue());
+    }
+
+    @Override
+    public boolean allowConsole() {
+        return true;
     }
 
 }
